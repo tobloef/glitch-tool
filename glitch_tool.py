@@ -1,20 +1,22 @@
 import argparse
-import random
-import sys
-import re
+import copy
 import math
 from os import path
+import platform
+import random
+import re
+import sys
 
 def writeFile(fileByteList, fileNum, iteration, bytesTochange, seed):
     filename, extension = path.splitext(args.infile)
-    filename = filename.split("\\")[-1]
+    filename = filename.split("\\")[-1] if platform.system == "Windows" else filename.split("/")[-1]
     outPath = f"{args.outdir}{filename}_m={args.mode}_b={bytesTochange}_s={seed}_n={fileNum}_i={iteration}{extension}"
     if (not args.quiet):
         print("Writing file to " + outPath)
     open(outPath, "wb").write(bytes(fileByteList))
 
 def messWithFile(originalByteList, iterations, bytesToChange, repeatWidth, fileNum):
-    newByteList = [b for b in originalByteList]
+    newByteList = copy.copy(originalByteList)
     iteration = 1
     seed = args.seed or random.randrange(sys.maxsize)
     random.seed(seed)
