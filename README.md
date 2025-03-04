@@ -1,6 +1,6 @@
 # glitch-tool
 
-glitch-tool is a simple Python script for messing with files in a few different ways. This tool was created for making glitch art, more specifically doing databending. You can read more about my results in [this blog post](https://tobloef.com/fun/glitch-art). This tool was mostly created for this one-time use and therefore the code quality isn't great. 
+glitch-tool is a simple Python script for messing with files in a few different ways. This tool was created for making glitch art, more specifically doing databending. You can read more about my results in [this blog post](https://tobloef.com/blog/glitch-art/). This tool was mostly created for this one-time use and therefore the code quality isn't great. 
 
 ## Usage
 ```
